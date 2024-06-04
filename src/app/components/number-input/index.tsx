@@ -9,7 +9,7 @@ const NumberInput = ({ name }: NumberInput) => {
 
   return (
     <input
-      className="text-9xl text-center text-textColor bg-secondary h-56 rounded-lg cursor-pointer"
+      className="text-9xl text-center text-textColor bg-secondary max-w-44 h-auto max-h-52 py-4 rounded-lg cursor-pointer"
       type="number"
       name={name}
       value={value}
