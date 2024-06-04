@@ -10,11 +10,9 @@ const NumberInput = ({ name }: NumberInput) => {
   return (
     <input
       className="rounded-lg text-9xl text-center h-56 border-textColor bg-secondary text-textColor"
-      type="text"
+      type="number"
       name={name}
       value={value}
-      // maxLength={1}
-      size={1}
     />
   );
 };
