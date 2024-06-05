@@ -6,6 +6,7 @@ import NumberInput from "./components/number-input";
 
 export default function Home() {
   const inputRefs = [useRef(), useRef(), useRef(), useRef()];
+  const buttonRef = useRef();
 
   const handleKeyUp = (e, index) => {
     const inputElement = inputRefs[index].current;
@@ -14,13 +15,20 @@ export default function Home() {
     const maxLength = inputElement.maxLength;
 
     if (e.key === "Backspace") {
-      if (index > 0) {
-        inputRefs[index - 1].current.focus();
+      const prevElement = inputRefs[index - 1]?.current;
+      if (currentLength !== maxLength) {
+        if (index > 0) {
+          prevElement.focus();
+        }
       }
     } else {
-      const nextElement = inputRefs[index + 1]?.current;
       if (currentLength === maxLength) {
-        nextElement.focus();
+        const nextElement = inputRefs[index + 1]?.current;
+        if (index < 3) {
+          nextElement.focus();
+        } else {
+          buttonRef.current.focus();
+        }
       }
     }
   };
@@ -51,7 +59,7 @@ export default function Home() {
             handleKeyUp={(e) => handleKeyUp(e, 3)}
           />
         </div>
-        <Button label="Verify OTP" />
+        <Button label="Verify OTP" ref={buttonRef} />
       </div>
     </main>
   );
