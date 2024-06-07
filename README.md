@@ -2,7 +2,7 @@
 
 ## Introduction
 > An OTP Verifier that verifies the OTP code.
-This is a straight-forward component; you add codes one by one and the cursor moves forward to the next input and when you finally submit, you get notified with the toast, vefifying whether you entered the right code or not.
+This is a straight-forward component; you add codes one by one and the cursor moves forward to the next input, and when you finally submit, you get notified with the toast, verifying whether you entered the right code or not.
 
 <details>
   <summary>Find the correct OTP code here!</summary>
