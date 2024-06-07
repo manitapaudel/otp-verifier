@@ -11,7 +11,7 @@ interface ToastProps {
 const Toast = ({ toastType, extraClass, setShowToast }: ToastProps) => {
   return (
     <div
-      className={`absolute right-0 z-10 flex items-center w-72 h-16 rounded-md p-2.5 translate-x-full transition ease-in-out delay-150 border border-l-8 ${
+      className={`absolute right-0 top-0 z-10 margin-0 flex items-center w-72 h-16 rounded-md p-2.5 translate-x-full transition ease-in-out delay-150 border border-l-8 ${
         toastType === "success"
           ? "border-green-500 bg-green-100"
           : toastType === "error"
