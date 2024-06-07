@@ -1,12 +1,12 @@
-import { KeyboardEvent, useRef, useState } from "react";
+import { KeyboardEvent, useContext, useRef, useState } from "react";
 
 import NumberInput from "../number-input";
 import Button from "../button";
+import { ToastContext } from "../../utils/context";
 
 const otpCode = "1212";
 
 const Verifier = () => {
-  const [borderColor, setBorderColor] = useState("neutral");
   const inputRefs = [
     useRef<HTMLInputElement>(),
     useRef<HTMLInputElement>(),
@@ -14,6 +14,9 @@ const Verifier = () => {
     useRef<HTMLInputElement>(),
   ];
   const buttonRef = useRef<HTMLButtonElement>();
+
+  const { handleShowToast, setShowToast, toastType, setToastType }: any =
+    useContext(ToastContext);
 
   const handleKeyUp = (
     event: KeyboardEvent<HTMLInputElement>,
@@ -49,8 +52,13 @@ const Verifier = () => {
       const inputElement = inputRefs[i].current;
       enteredCode += inputElement.value;
     }
-    if (otpCode === enteredCode) setBorderColor("success");
-    else setBorderColor("error");
+    if (otpCode === enteredCode) {
+      setToastType("success");
+      handleShowToast();
+    } else {
+      setToastType("error");
+      handleShowToast();
+    }
   };
 
   return (
@@ -70,9 +78,9 @@ const Verifier = () => {
                 handleKeyUp(event, index)
               }
               extraClass={`border border-4 ${
-                borderColor === "success"
+                toastType === "success"
                   ? "border-green-600"
-                  : borderColor === "error"
+                  : toastType === "error"
                   ? "border-rose-600"
                   : "border-none"
               }`}
