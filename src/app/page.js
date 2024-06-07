@@ -1,9 +1,7 @@
 "use client";
 
-import Verifier from "./components/verifier";
-
-const otpCode = "1212";
+import Toast from "./components/toast";
 
 export default function Home() {
-  return <Verifier />;
+  return <Toast />;
 }
