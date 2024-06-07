@@ -3,7 +3,7 @@
 import { CheckIcon, CloseIcon, WarningIcon } from "../../icons";
 
 interface ToastProps {
-  toastType: "success" | "error";
+  toastType: string;
   extraClass: string;
   setShowToast: (a: boolean) => void;
 }

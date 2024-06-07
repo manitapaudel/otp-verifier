@@ -20,7 +20,6 @@ export default function Home() {
   return (
     <div>
       <Toast
-        type="success"
         extraClass={`${showToast ? "translate-x-0" : ""}`}
         setShowToast={setShowToast}
         toastType={toastType}
