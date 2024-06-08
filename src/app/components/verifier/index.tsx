@@ -8,12 +8,12 @@ const otpCode = "1212";
 
 const Verifier = () => {
   const inputRefs = [
-    useRef<HTMLInputElement>(),
-    useRef<HTMLInputElement>(),
-    useRef<HTMLInputElement>(),
-    useRef<HTMLInputElement>(),
+    useRef<HTMLInputElement>(null),
+    useRef<HTMLInputElement>(null),
+    useRef<HTMLInputElement>(null),
+    useRef<HTMLInputElement>(null),
   ];
-  const buttonRef = useRef<HTMLButtonElement>();
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const { handleShowToast, setShowToast, toastType, setToastType }: any =
     useContext(ToastContext);
