@@ -1,7 +1,14 @@
 <h1 align="center"> 🟢TP Verifier</h1>
 
 ## Introduction
-A OTP Verifier that verifies the otp code
+> An OTP Verifier that verifies the OTP code.
+This is a straight-forward component; you add codes one by one and the cursor moves forward to the next input, and when you finally submit, you get notified with the toast, verifying whether you entered the right code or not.
+
+<details>
+  <summary>Find the correct OTP code here!</summary>
+  1212
+</details>
+
 
 ## Resources
 
@@ -9,5 +16,8 @@ A OTP Verifier that verifies the otp code
 - Next.js
 - TypeScript
 - Tailwindcss
+
+### Websites
+- Icons from https://heroicons.com/
 
 Made with ❤️ and verified with 💓 by me.
